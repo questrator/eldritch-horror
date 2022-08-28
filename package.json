@@ -1,5 +1,23 @@
 {
   "dependencies": {
     "three": "^0.143.0"
-  }
+  },
+  "name": "eldritch-horror",
+  "description": "В рамках данного CodeJam необходимо будет создать небольшое приложение-хелпер для настольной игры \"Древний Ужас\"",
+  "version": "1.0.0",
+  " main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/questrator/eldritch-horror.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/questrator/eldritch-horror/issues"
+  },
+  "homepage": "https://github.com/questrator/eldritch-horror#readme"
 }
