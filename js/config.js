@@ -44,30 +44,35 @@ const ancients = {
 const difficulties = {
     supereasy: {
         id: "supereasy",
+        name: "Whiny Girl",
         required: "easy",
         remaining: "medium",
         forbidden: "hard"
     },
     easy: {
         id: "easy",
+        name: "Too Young To Die",
         required: null,
         remaining: null,
         forbidden: "hard"
     },
     standart: {
         id: "standart",
+        name: "Let's Rock",
         required: null,
         remaining: null,
         forbidden: null
     },
     hard: {
         id: "hard",
+        name: "Nightmare",
         required: null,
         remaining: null,
         forbidden: "easy"
     },
     superhard: {
         id: "superhard",
+        name: "Apocalypse",
         required: "hard",
         remaining: "medium",
         forbidden: "easy"

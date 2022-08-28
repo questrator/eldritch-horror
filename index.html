@@ -1,31 +1,58 @@
 <!DOCTYPE html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eldritch Horror (@questrator)</title>
+    <script src="./node_modules/three/build/three.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <link rel="stylesheet" type="text/css" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Spectral+SC:wght@500&display=swap" rel="stylesheet">
 </head>
+
 <body>
-    <main id="main">
-        <section class="difficulties">
-            <button class="difficulty" data-level="supereasy">Whiny girl</button>
-            <button class="difficulty" data-level="easy">Too young to die</button>
-            <button class="difficulty" data-level="standart">Let's rock</button>
-            <button class="difficulty" data-level="hard">Nightmare</button>
-            <button class="difficulty" data-level="superhard">Apocalypse</button>
+    <section class="greeting">
+        <div class="loader"></div>
+        <div class="continue">Continue</div>
+    </section>
+    <section class="status-bar">
+        <section class="difficultyLevel">Difficulty: <span class="difficultyLevelData"></span></section>
+        <section class="ancientName">Ancient: <span class="ancientNameData"></span></section>
+        <section class="cardsLeft">Cards left: <span class="cardsLeftData"></span></section>
+        <section class="audio">
+            <audio class="player" src="./assets/audio/soundtrack-1.mp3" loop preload="auto"></audio>
+            <div class="mute"></div>
         </section>
-        <section class="ancients">
-            <button class="ancient" data-ancient="azathoth">Azathoth</button>
-            <button class="ancient" data-ancient="cthulhu">Cthulhu</button>
-            <button class="ancient" data-ancient="iogSothoth">Yog-Sothoth</button>
-            <button class="ancient" data-ancient="shubNiggurath">Shub-Niggurath</button>
-            <button class="ancient" data-ancient="random">Random Ancient</button>
+    </section>
+    <main class="path">
+        <section class="choice-title">Choose your path</section>
+        <section class="choice">
+            <section class="difficulties">
+                <div class="difficultyTitle">Difficulty</div>
+                <button class="difficulty" data-level="supereasy">Whiny girl</button>
+                <button class="difficulty" data-level="easy">Too young to die</button>
+                <button class="difficulty" data-level="standart">Let's rock</button>
+                <button class="difficulty" data-level="hard">Nightmare</button>
+                <button class="difficulty" data-level="superhard">Apocalypse</button>
+            </section>
+            <section class="ancients">
+                <div class="ancientTitle">Ancient</div>
+                <button class="ancient" data-ancient="azathoth">Azathoth</button>
+                <button class="ancient" data-ancient="cthulhu">Cthulhu</button>
+                <button class="ancient" data-ancient="iogSothoth">Yog-Sothoth</button>
+                <button class="ancient" data-ancient="shubNiggurath">Shub-Niggurath</button>
+                <button class="ancient" data-ancient="random">Random Ancient</button>
+            </section>
         </section>
         <section class="start">
-            <button class="go">START</button>
+            <button class="go" disabled>START</button>
         </section>
+    </main>
+    <main class="spread">
         <section class="tracker">
             <div class="stage stage-1">
                 <div class="green" data-color="green"></div>
@@ -42,12 +69,17 @@
                 <div class="yellow" data-color="yellow"></div>
                 <div class="blue" data-color="blue"></div>
             </div>
-        </section>
-        <section class="cards">
-            <button class="next">NEXT</button>
-            <div class="card"></div>
+            <section class="cards">
+                <button class="next">NEXT</button>
+                <div class="card"></div>
+            </section>
         </section>
     </main>
+        
+
+
     <script type="module" src="./js/app.js"></script>
+    <script type="module" src="./js/smoke.js"></script>
 </body>
+
 </html>

@@ -1,15 +1,163 @@
-section.ancients {
+@font-face {
+    font-family: "Zombie";
+    src: url("../assets/fonts/zombie-holocaust.ttf");
+}
+
+html,
+body {
+    overflow: hidden;
+    font-family: "Spectral SC", serif;
+}
+
+.greeting {
+    position: absolute;
+    top: calc(50% - 218px);
+    left: calc(50% - 353px);
+    width: 706px;
+    height: 456px;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: transparent;
+    background-image: url("../assets/images/intro/greeting-bg.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1;
+    transition: all 1s ease;
+}
+
+.greeting>.continue {
+    font-size: 2rem;
+    letter-spacing: 5px;
+    color: #c1af2f;
+    cursor: pointer;
+}
+
+.greeting>.continue:hover {
+    color: #ffd22f;
+}
+
+.status-bar {
+    position: absolute;
+    top: -60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    background-color: rgba(168, 0, 0, 0.45);
+    opacity: 0;
+    transition: all 1s ease;
+}
+
+.ancientName,
+.difficultyLevel,
+.cardsLeft {
+    color: #ff5d6d;
+    font-size: 1.2rem;
+}
+
+.ancientName>span,
+.difficultyLevel>span,
+.cardsLeft>span {
+    color: #c1e56b;
+    font-size: 1.2rem;
+}
+
+.difficultyLevel {
+    width: 310px;
+}
+
+
+.ancientName {
+    width: 280px;
+}
+
+.cardsLeft {
+    width: 180px;
+}
+
+.mute {
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    background-image: url("../assets/images/audio/unmute.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 0.6;
+}
+
+.muted {
+    background-image: url("../assets/images/audio/mute.png");
+}
+
+main.path, main.spread {
+    position: absolute;
+    top: 60px;
+    display: none;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
+    align-items: center;
+    width: 100%;
+    height: calc(100% - 60px);
+    opacity: 0;
+    transition: all 0.8s ease;
+}
+
+.choice-title {
+    font-family: "Zombie";
+    font-size: 5rem;
+    letter-spacing: 8px;
+    color: #ffbc00;
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-shadow: 0px -6px 0px rgba(0, 20, 43, 0.6), 0px 2px 0px #c10000;
+    margin-bottom: 60px;      
+}
+
+section.choice {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.difficultyTitle, .ancientTitle {
+    margin-bottom: 30px;
+    font-size: 2rem;
+    color: #fff;
+    text-align: center;
 }
 
 section.difficulties {
+    position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 20px;
-    padding: 10px;
+    width: 250px;
+}
+
+section.ancients {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 250px;
+}
+
+.ancient, .difficulty {
+    font-size: 1.3rem;
+    height: 50px;
+    color:rgba(0, 255, 179, 0.552);
+    border-color: transparent;
+    background-color: transparent;
+}
+
+.ancient:focus, .difficulty:focus {
+    color: #fff;
+    background-color: rgba(192, 0, 35, 0.767);
 }
 
 section.start {
@@ -19,7 +167,14 @@ section.start {
     padding: 10px;
 }
 
+.go {
+    margin-top: 20px;
+    height: 40px;
+    width: 200px;
+}
+
 section.tracker {
+    position: absolute;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -40,7 +195,9 @@ section.cards {
     gap: 40px;
 }
 
-.stage-1, .stage-2, .stage-3 {
+.stage-1,
+.stage-2,
+.stage-3 {
     /* padding: 20px 30px; */
 }
 
@@ -56,7 +213,9 @@ section.cards {
     background-color: rgba(0, 0, 0, 0.12);
 }
 
-.green, .yellow, .blue {
+.green,
+.yellow,
+.blue {
     min-height: 20px;
     min-width: 20px;
     padding: 20px 30px;
