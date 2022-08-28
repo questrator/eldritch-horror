@@ -55,6 +55,7 @@ function playGroan() {
 
 function countCards() {
     cardsLeftData.textContent = spread.stageCards.reduce((r, e) => r + e, 0);
+    if (cardsLeftData.textContent === "0") next.disabled = true;
 }
 
 function loadSpreadScene() {
