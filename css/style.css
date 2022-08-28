@@ -1,0 +1,76 @@
+section.ancients {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+section.difficulties {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+section.start {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+section.tracker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+section.cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.stage {
+    display: flex;
+    gap: 40px;
+}
+
+.stage-1, .stage-2, .stage-3 {
+    /* padding: 20px 30px; */
+}
+
+.stage-1 {
+    background-color: rgba(0, 0, 0, 0.01);
+}
+
+.stage-2 {
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+.stage-3 {
+    background-color: rgba(0, 0, 0, 0.12);
+}
+
+.green, .yellow, .blue {
+    min-height: 20px;
+    min-width: 20px;
+    padding: 20px 30px;
+    text-align: center;
+}
+
+.green {
+    background-color: rgba(0, 214, 0, 0.3);
+}
+
+.yellow {
+    background-color: rgba(237, 186, 0, 0.3);
+}
+
+.blue {
+    background-color: rgba(0, 154, 237, 0.3);
+}
