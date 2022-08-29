@@ -1,7 +1,7 @@
 import * as config from "./config.js";
 import { getRandomN, shuffle } from "./randomizer.js";
 
-let [ancient, difficulty, deck, spread] = [null, null, null, null];
+let [ancient, difficulty, deck, spread, currentColor] = [null, null, null, null, null];
 const difficultiesBlock = document.querySelector(".difficulties");
 difficultiesBlock.addEventListener("click", setDifficulty);
 const ancientsBlock = document.querySelector(".ancients");
@@ -62,7 +62,7 @@ function tracking() {
 function nextCard() {
     const currentStage = `stage${spread.stageCards.findIndex(e => e > 0) + 1}`;
     const availableColors = colors.filter(color => spread[color][currentStage].length > 0);
-    const currentColor = availableColors[getRandomN(0, availableColors.length - 1)];
+    currentColor = availableColors[getRandomN(0, availableColors.length - 1)];
     const currentCard = spread[currentColor][currentStage].pop();
     --spread.stageCards[+currentStage.replace("stage", "") - 1];
     console.log(currentColor, currentCard);
@@ -70,4 +70,4 @@ function nextCard() {
     cardBlock.innerHTML = `<img src="./assets/MythicCards/${currentColor}/${currentColor}${currentCard}.png" alt="Mythic Card" />`;
 }
 
-export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next};
+export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor};

@@ -1,4 +1,4 @@
-import {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next} from "./spread.js";
+import {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor} from "./spread.js";
 
 const greetingContinue = document.querySelector(".continue");
 greetingContinue.addEventListener("click", loadPathScene);
@@ -70,7 +70,10 @@ function playGroan() {
 
 function countCards() {
     cardsLeftData.textContent = spread.stageCards.reduce((r, e) => r + e, 0);
-    if (cardsLeftData.textContent === "0") next.disabled = true;
+    if (cardsLeftData.textContent === "0") {
+        next.disabled = true;
+        next.textContent = "The End"
+    }
 }
 
 function loadSpreadScene() {
