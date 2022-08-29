@@ -300,6 +300,8 @@ section.cards {
 .card img {    
     padding: 8px;
     border-radius: 16px;
+    opacity: 0;
+    transition: all 1s ease;
 }
 
 .imgBg-green {

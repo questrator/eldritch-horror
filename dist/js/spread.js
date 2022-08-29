@@ -69,7 +69,10 @@ function nextCard() {
     tracking();
     const img = new Image();
     img.src = `./assets/MythicCards/${currentColor}/${currentColor}${currentCard}.png`;
-    img.onload = () => cardBlock.innerHTML = `<img class="imgBg-${currentColor}" src="${img.src}" alt="Mythic Card" />`;
+    img.onload = () => {
+        cardBlock.innerHTML = `<img class="imgBg-${currentColor}" src="${img.src}" alt="Mythic Card" />`;
+        setTimeout(() => document.querySelector(".card img").style.opacity = 1, 500);
+    }
 }
 
 export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor};
