@@ -126,13 +126,13 @@ section.choice {
     position: relative;
     display: flex;
     flex-direction: row;
-    gap: 100px;
+    gap: 40px;
 }
 
 .difficultyTitle, .ancientTitle {
-    margin-bottom: 30px;
+    margin-bottom: 0px;
     font-size: 2rem;
-    color: #fff;
+    color: #959eac;
     text-align: center;
 }
 
@@ -141,7 +141,7 @@ section.difficulties {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
+    width: 300px;    
 }
 
 section.ancients {
@@ -149,20 +149,42 @@ section.ancients {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 250px;
+    width: 300px;
+}
+.ancientsList, .difficultyList {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 300px;
+    height: 448px;
+    background-repeat: no-repeat;
+    background-color: transparent;
+    background-position: center 10px;
+}
+
+.ancientsList {
+    background-image: url("../assets/images/intro/pathscene-right.png");
+}
+
+.difficultyList {
+    background-image: url("../assets/images/intro/pathscene-left.png");
 }
 
 .ancient, .difficulty {
     font-size: 1.3rem;
-    height: 50px;
-    color:rgba(0, 255, 179, 0.552);
+    height: 60px;
+    color: rgba(40, 20, 0, 0.85);
+    font-weight: 700;
+    text-shadow: 0px 1px 0px rgb(255 160 115 / 66%), 0px -1px 0px rgb(35 9 0), 0px 0px 40px rgb(146 255 163 / 85%);
     border-color: transparent;
     background-color: transparent;
+    transition: all 1s ease;
 }
 
-.ancient:focus, .difficulty:focus {
-    color: #fff;
-    background-color: rgba(192, 0, 35, 0.767);
+.glow {
+    color: rgba(255, 210, 0, 1.0);
+    text-shadow: 0px -1px 0px rgba(11, 3, 0, 0.9), 0px 0px 20px rgba(255, 84, 50, 1), 0px 0px 30px rgba(214, 255, 50, 1.0);
 }
 
 section.start {
@@ -174,8 +196,17 @@ section.start {
 
 .go {
     margin-top: 20px;
-    height: 40px;
-    width: 200px;
+    height: 60px;
+    width: 400px;
+    font-size: 2rem;
+    color:#a8ff14;
+    background-color: transparent;
+    border: none;
+    transition: all 1s ease;
+}
+
+.go:disabled {
+    color:#d47200ad;
 }
 
 section.tracker {

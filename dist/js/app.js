@@ -37,13 +37,28 @@ function loadPathScene() {
     statusBar.style.opacity = 1;
 }
 
+const difficultyButtons = document.querySelectorAll(".difficulty");
+const ancientsButtons = document.querySelectorAll(".ancient");
+[difficultyButtons, ancientsButtons].forEach(set => set.forEach(e => e.addEventListener("click", setGlow)));
+
+function setGlow(event) {
+    Array.from(event.target.parentElement.children).forEach(e => e.classList.remove("glow"));
+    event.target.classList.add("glow");
+}
+
 function chooseDifficulty(event) {    
     difficultyLevelData.textContent = difficulty.name;
-    if (ancient) start.disabled = false;
+    if (ancient) startButton();
 }
 function chooseAncient(event) {    
     ancientNameData.textContent = ancient.name;
-    if (difficulty) start.disabled = false;
+    if (difficulty) startButton();
+}
+
+function startButton() {
+    start.disabled = false;
+    start.textContent = "Start";
+    start.classList.add("glow");
 }
 
 function playGroan() {
