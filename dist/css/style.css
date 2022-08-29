@@ -300,7 +300,18 @@ section.cards {
 .card img {    
     padding: 8px;
     border-radius: 16px;
-    background-color: #c100006e;
+}
+
+.imgBg-green {
+    background-color: #01aa0066;
+}
+
+.imgBg-yellow {
+    background-color: #ead4286e;
+}
+
+.imgBg-blue {
+    background-color: #007ee26e;
 }
 
 .next {

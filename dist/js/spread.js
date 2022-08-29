@@ -67,7 +67,7 @@ function nextCard() {
     --spread.stageCards[+currentStage.replace("stage", "") - 1];
     console.log(currentColor, currentCard);
     tracking();
-    cardBlock.innerHTML = `<img src="./assets/MythicCards/${currentColor}/${currentColor}${currentCard}.png" alt="Mythic Card" />`;
+    cardBlock.innerHTML = `<img class="imgBg-${currentColor}" src="./assets/MythicCards/${currentColor}/${currentColor}${currentCard}.png" alt="Mythic Card" />`;
 }
 
 export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor};
