@@ -75,4 +75,4 @@ function nextCard() {
     }
 }
 
-export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor};
+export {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor, cardBlock};

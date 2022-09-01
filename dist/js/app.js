@@ -1,4 +1,5 @@
-import {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor} from "./spread.js";
+import { cards } from "./config.js";
+import {difficultiesBlock, ancientsBlock, ancient, difficulty, start, spread, next, currentColor, cardBlock} from "./spread.js";
 
 const greetingContinue = document.querySelector(".continue");
 greetingContinue.addEventListener("click", loadPathScene);
@@ -15,6 +16,8 @@ ancientsBlock.addEventListener("click", chooseAncient);
 const ancientNameData = document.querySelector(".ancientNameData");
 const cardsLeftData = document.querySelector(".cardsLeftData");
 next.addEventListener("click", countCards);
+const restart = document.querySelector(".restart");
+restart.addEventListener("click", makeRestart);
 [playGroan, countCards, loadSpreadScene].forEach(e => start.addEventListener("click", e));
 
 function muteToggle(event) {
@@ -72,7 +75,9 @@ function countCards() {
     cardsLeftData.textContent = spread.stageCards.reduce((r, e) => r + e, 0);
     if (cardsLeftData.textContent === "0") {
         next.disabled = true;
-        next.textContent = "The End"
+        next.textContent = "The End";
+        restart.style.display = "flex";
+        setTimeout(() => restart.style.opacity = 1, 1100);
     }
 }
 
@@ -81,4 +86,17 @@ function loadSpreadScene() {
     const mainPathFadeOut = setTimeout(() => mainPath.style.display = "none", 1100);
     mainSpread.style.display = "flex";
     const mainSpreadFadeIn = setTimeout(() => mainSpread.style.opacity = 1, 1100);
+}
+
+function makeRestart() {
+    mainSpread.style.opacity = 0;
+    const mainSpreadFadeOut = setTimeout(() => mainSpread.style.display = "none", 1100);
+    mainPath.style.display = "flex";
+    const mainPathFadeIn = setTimeout(() => mainPath.style.opacity = 1, 1100);
+    setTimeout(() => {
+        next.disabled = false;
+        next.textContent = "Next";
+        restart.style.display = "none";
+        cardBlock.innerHTML = "";
+    }, 2000);
 }
